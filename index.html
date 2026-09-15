@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R S Pathan | Authorised Taparia Tools Dealer</title>
+<meta name="description" content="R S Pathan — authorised Taparia Tools dealer. Genuine hand tools, spanners, pliers, sockets and workshop equipment at official price-list rates.">
+
+<style>
+:root{
+  --red:#e53935;
+  --red2:#c62828;
+  --dark:#151d24;
+  --dark2:#202a33;
+  --light:#f4f6f8;
+  --white:#fff;
+  --text:#20262c;
+  --muted:#707982;
+  --border:#dde2e6;
+  --success:#198754;
+  --shadow:0 5px 20px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--light);color:var(--text);line-height:1.5}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+button{cursor:pointer}
+img{display:block;max-width:100%}
+.container{max-width:1280px;margin:auto;padding:0 18px}
+
+.topbar{background:#0d1318;color:#fff;text-align:center;padding:8px;font-size:12px}
+
+header{background:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.header-main{min-height:72px;display:flex;align-items:center;gap:24px}
+.logo{min-width:210px;display:flex;align-items:center;gap:12px}
+.logo-mark{width:40px;height:40px;border-radius:8px;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:900;font-size:1.1rem}
+.logo h1{font-size:23px;line-height:1;font-weight:800}
+.logo h1 span{color:var(--red)}
+.logo small{display:block;color:var(--muted);font-size:9px;letter-spacing:1.5px;margin-top:4px}
+.nav-links{display:flex;align-items:center;gap:22px;flex:1;font-size:13px;font-weight:700;color:var(--muted)}
+.nav-links a:hover{color:var(--red)}
+.cart-btn{position:relative;border:0;background:var(--red);color:#fff;border-radius:6px;padding:11px 16px;font-weight:700;font-size:13px}
+.cart-btn:hover{background:var(--red2)}
+.cart-count{position:absolute;top:-7px;right:-7px;width:19px;height:19px;border-radius:50%;background:var(--dark);color:#fff;font-size:10px;display:grid;place-items:center}
+
+.hero{padding:64px 0;background:linear-gradient(120deg,var(--dark) 55%,var(--dark2)),url("https://images.unsplash.com/photo-1756027583186-a04a19e4f6ce?auto=format&fit=crop&w=1800&q=80") center/cover;background-blend-mode:multiply;color:#fff}
+.hero-inner{max-width:680px}
+.hero-label{color:#ff6a63;font-size:13px;letter-spacing:2px;font-weight:800}
+.hero h2{font-size:clamp(32px,5.5vw,52px);margin:12px 0 16px;line-height:1.08}
+.hero h2 span{color:#ff4d49}
+.hero p{color:#d7dde2;line-height:1.7;margin-bottom:24px;max-width:540px}
+.btn{border:0;border-radius:5px;padding:13px 20px;font-weight:800;font-size:12.5px;display:inline-flex;gap:6px;align-items:center}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red2)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff}
+
+.section{padding:52px 0}
+.title{margin-bottom:24px}
+.title.center{text-align:center}
+.title small{color:var(--red);text-transform:uppercase;font-weight:800;letter-spacing:2px;font-size:11px}
+.title h2{font-size:28px;margin:6px 0}
+.title p{font-size:13.5px;color:var(--muted)}
+
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.filter-btn{border:1px solid var(--border);background:#fff;color:var(--muted);padding:8px 14px;border-radius:999px;font-weight:700;font-size:12px}
+.filter-btn.active,.filter-btn:hover{background:var(--red);color:#fff;border-color:var(--red)}
+
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.product{background:#fff;border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:.2s;cursor:pointer}
+.product:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.product-image{aspect-ratio:1/0.85;overflow:hidden;background:#f0f0f0}
+.product-image img{width:100%;height:100%;object-fit:cover}
+.product-body{padding:13px}
+.pcode{color:#a1a8ae;font-size:9.5px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.product h3{font-size:13.5px;margin:5px 0;min-height:34px;line-height:1.3}
+.product-cat{color:var(--red);font-size:10.5px;font-weight:700;text-transform:uppercase}
+.price{font-size:17px;font-weight:900;margin-top:6px}
+.price span{font-size:11px;color:var(--muted);font-weight:400}
+.add-btn{width:100%;margin-top:10px;border:0;border-radius:5px;background:var(--dark);color:#fff;padding:9px;font-weight:700;font-size:12px}
+.add-btn:hover{background:var(--red)}
+.add-btn.in-cart{background:var(--success)}
+
+.detail-wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.detail-image{border:1px solid var(--border);border-radius:6px;overflow:hidden;background:#f0f0f0}
+.detail-image img{width:100%;aspect-ratio:1/0.85;object-fit:cover}
+.detail-cat{color:var(--red);font-weight:800;text-transform:uppercase;font-size:11px;letter-spacing:1px}
+.detail-content h1{font-size:clamp(22px,4vw,34px);margin:8px 0 6px}
+.detail-code{color:var(--muted);font-size:12.5px;margin-bottom:14px}
+.detail-price{font-size:26px;font-weight:900;margin-bottom:16px}
+.detail-desc{color:var(--muted);font-size:13.5px;line-height:1.7;margin-bottom:20px}
+.spec-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:12.5px}
+.spec-row span:first-child{color:var(--muted)}
+.qty-control{display:inline-flex;align-items:center;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-right:10px}
+.qty-control button{border:0;background:#fff;padding:9px 13px;font-size:15px}
+.qty-control span{min-width:30px;text-align:center;font-weight:800}
+
+.cart-layout{display:grid;grid-template-columns:1.6fr 0.9fr;gap:22px;align-items:start}
+.cart-list,.summary,.checkout-form{background:#fff;border:1px solid var(--border);border-radius:6px;padding:20px}
+.cart-item{display:grid;grid-template-columns:75px 1fr auto;gap:13px;align-items:center;padding:13px 0;border-bottom:1px solid var(--border)}
+.cart-item:first-child{padding-top:0}
+.cart-item:last-child{border-bottom:0}
+.cart-item img{width:75px;height:60px;object-fit:cover;border-radius:5px;background:#f0f0f0}
+.cart-item h3{font-size:13px;margin-bottom:3px}
+.cart-item-price{color:var(--muted);font-size:11.5px}
+.cart-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.small-qty{display:inline-flex;align-items:center;border:1px solid var(--border);border-radius:5px;overflow:hidden}
+.small-qty button{border:0;background:#f5f6f7;padding:5px 9px}
+.small-qty span{padding:0 9px;font-weight:700;font-size:12px}
+.remove-btn{border:0;background:none;color:var(--red);font-weight:700;font-size:11.5px}
+.summary h2{margin-bottom:16px;font-size:16px}
+.summary-row{display:flex;justify-content:space-between;padding:8px 0;color:var(--muted);font-size:12.5px}
+.summary-total{border-top:1px solid var(--border);margin-top:8px;padding-top:14px;font-weight:900;color:var(--text);font-size:16px}
+
+.checkout-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:22px;align-items:start}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:11px;font-weight:800;margin-bottom:5px}
+.form-group input,.form-group textarea{width:100%;border:1px solid var(--border);padding:11px;background:#fafafa;outline:0;border-radius:4px}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--red)}
+.form-group textarea{min-height:85px;resize:vertical}
+.required{color:var(--red)}
+.checkout-item{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:12px}
+
+.empty-state{text-align:center;padding:60px 20px;color:var(--muted)}
+.empty-state h2{color:var(--text);margin-bottom:8px}
+
+.success-box{max-width:600px;margin:20px auto;padding:40px 22px;text-align:center;background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow)}
+.success-icon{width:60px;height:60px;display:grid;place-items:center;margin:0 auto 16px;background:#dcf3e4;color:var(--success);border-radius:50%;font-size:1.8rem;font-weight:900}
+
+footer{background:var(--dark);color:#fff;padding:40px 0 18px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px}
+.footer-grid h4{font-size:13px;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px}
+.footer-grid p,.footer-grid a,.footer-grid li{color:#b9c1c8;font-size:11.5px;line-height:1.9}
+.footer-grid ul{list-style:none}
+.footer-grid a:hover{color:#fff}
+.footer-bottom{border-top:1px solid #35414b;margin-top:26px;padding-top:15px;text-align:center;color:#9aa4ac;font-size:10.5px}
+
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,100px);opacity:0;background:var(--dark);color:#fff;padding:11px 17px;border-radius:6px;z-index:2000;transition:all .3s ease;box-shadow:var(--shadow)}
+.toast.show{transform:translate(-50%,0);opacity:1}
+
+@media(max-width:1000px){
+  .product-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .header-main{flex-wrap:wrap;padding:10px 0;gap:8px}
+  .nav-links{display:none}
+  .logo{min-width:auto}
+  .hero{padding:44px 0}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .detail-wrap,.cart-layout,.checkout-grid{grid-template-columns:1fr}
+  .cart-item{grid-template-columns:60px 1fr}
+  .cart-actions{grid-column:1/-1;justify-content:space-between}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">R S PATHAN &bull; AUTHORISED TAPARIA TOOLS DEALER &bull; CALL +91 95911 90977</div>
+
+<header>
+  <div class="container header-main">
+    <a href="#/" class="logo">
+      <div class="logo-mark">RP</div>
+      <div>
+        <h1><span>R S</span> Pathan</h1>
+        <small>AUTHORISED TAPARIA TOOLS DEALER</small>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#/">Home</a>
+      <a href="#products">All Tools</a>
+      <a href="#/cart">Cart</a>
+    </div>
+    <button class="cart-btn" onclick="navigate('/cart')">
+      Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h1 style="color:#fff;font-size:18px;"><span style="color:var(--red)">R S</span> Pathan</h1>
+      <p style="margin-top:10px;">Authorised Taparia Tools dealer. Genuine hand tools and workshop equipment, sold at official price-list rates. Prices are MRP inclusive of GST.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#products">All products</a></li>
+        <li><a href="#/cart">Cart</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>R S Pathan</h4>
+      <ul>
+        <li>Authorised Taparia Tools Dealer</li>
+        <li>Genuine products, billed rates</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>+91 95911 90977</li>
+        <li>sales@rspathan.example</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; <span id="year"></span> R S Pathan. Authorised Taparia Tools dealer &mdash; prices per official price list effective 27 April 2026.</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* =========================================
+   CONFIG
+   ========================================= */
+const CONFIG = {
+  storeName: "R S Pathan",
+  currency: "₹"
+};
+
+/* =========================================
+   PRODUCTS - real items & prices from the
+   Taparia Tools price list (effective 27 Apr 2026)
+   ========================================= */
+const PRODUCTS = [
+  {
+    id: 1,
+    code: "1172N",
+    name: "Adjustable Wrench 250mm, Chrome Plated",
+    price: 502,
+    category: "Wrenches",
+    description: "250mm adjustable wrench, chrome plated finish, 30mm max jaw opening. Generally conforming to IS 6149.",
+    images: ["https://images.unsplash.com/photo-1503789188050-804ee34b3d32?auto=format&fit=crop&w=900&q=80"],
+    stock: 25
+  },
+  {
+    id: 2,
+    code: "1621-8",
+    name: "Combination Side Cutting Pliers 200mm",
+    price: 334,
+    category: "Pliers",
+    description: "200mm insulated combination side cutting pliers with thick C.A. sleeve and joint cutter.",
+    images: ["https://images.unsplash.com/photo-1645449781249-27c94448f6f7?auto=format&fit=crop&w=900&q=80"],
+    stock: 30
+  },
+  {
+    id: 3,
+    code: "SVDE 01",
+    name: "VDE Insulated Pliers Set (3 Pcs)",
+    price: 3880,
+    category: "Pliers",
+    description: "VDE 1000V insulated set: combination pliers, side cutting pliers and long nose pliers. Conforms to IEC 60900:2018.",
+    images: ["https://images.unsplash.com/photo-1645449781249-27c94448f6f7?auto=format&fit=crop&w=900&q=80"],
+    stock: 10
+  },
+  {
+    id: 4,
+    code: "1013",
+    name: "Screw Driver Kit (8 Pcs, Blister Pack)",
+    price: 678,
+    category: "Screwdrivers",
+    description: "8-piece screwdriver kit with flat, Phillips and precision tips for general workshop use.",
+    images: ["https://images.unsplash.com/photo-1756027583186-a04a19e4f6ce?auto=format&fit=crop&w=900&q=80"],
+    stock: 18
+  },
+  {
+    id: 5,
+    code: "S 1/4 H",
+    name: "1/4\" Socket Set (17 Sockets + 6 Accessories)",
+    price: 2500,
+    category: "Sockets",
+    description: "6.3mm (1/4\") square drive socket set with ratchet handle, extension bars, universal joint and adaptors.",
+    images: ["https://images.unsplash.com/photo-1756027583186-a04a19e4f6ce?auto=format&fit=crop&w=900&q=80"],
+    stock: 12
+  },
+  {
+    id: 6,
+    code: "TSW10",
+    name: "T-Socket Wrench, 10mm",
+    price: 204,
+    category: "Sockets",
+    description: "T-handle socket wrench, 10mm size, for quick nut and bolt access in tight spaces.",
+    images: ["https://images.unsplash.com/photo-1756027583186-a04a19e4f6ce?auto=format&fit=crop&w=900&q=80"],
+    stock: 24
+  },
+  {
+    id: 7,
+    code: "TW 100",
+    name: "Torque Wrench TW 100, 1/2\" Drive (20-100 N.m)",
+    price: 4653,
+    category: "Torque Wrenches",
+    description: "Standard type torque wrench, 1/2\" drive, 20-100 N.m range, for precise fastener tightening.",
+    images: ["https://images.unsplash.com/photo-1503789146722-cf137a3c0fea?auto=format&fit=crop&w=900&q=80"],
+    stock: 6
+  },
+  {
+    id: 8,
+    code: "HPW 14",
+    name: "Heavy Duty Pipe Wrench, 350mm",
+    price: 1123,
+    category: "Pipe Wrenches",
+    description: "350mm heavy duty pipe wrench, suitable for pipes 14-61mm. Conforms to IS 4003 (II).",
+    images: ["https://images.unsplash.com/photo-1503789146722-cf137a3c0fea?auto=format&fit=crop&w=900&q=80"],
+    stock: 14
+  },
+  {
+    id: 9,
+    code: "WH 500 B/C",
+    name: "Ball Pein Hammer with Handle, 500g",
+    price: 367,
+    category: "Hammers",
+    description: "500g ball pein hammer with fitted handle, conforms to IS 841.",
+    images: ["https://images.unsplash.com/flagged/photo-1586864388090-d599b2dcc2f8?auto=format&fit=crop&w=900&q=80"],
+    stock: 22
+  },
+  {
+    id: 10,
+    code: "FC22-400",
+    name: "F-Clamp (Heavy Duty), 400mm",
+    price: 1781,
+    category: "Clamps",
+    description: "Heavy duty F-clamp with 400mm max opening, conforms to IS 9181.",
+    images: ["https://images.unsplash.com/photo-1756027583186-a04a19e4f6ce?auto=format&fit=crop&w=900&q=80"],
+    stock: 9
+  },
+  {
+    id: 11,
+    code: "CSS 12",
+    name: "Combination Spanner Set (12 Pcs)",
+    price: 678,
+    category: "Spanners",
+    description: "12-piece combination spanner set, 6 to 22mm, chrome plated finish. Conforms to IS 6389.",
+    images: ["https://images.unsplash.com/photo-1756027583186-a04a19e4f6ce?auto=format&fit=crop&w=900&q=80"],
+    stock: 16
+  },
+  {
+    id: 12,
+    code: "AKM-9",
+    name: "Allen Key Set, 9 Pcs (Box Packing)",
+    price: 297,
+    category: "Allen Keys",
+    description: "9-piece Allen key set, brown finish, sizes 1.5 to 10mm, box packing. Conforms to IS 3082.",
+    images: ["https://images.unsplash.com/photo-1756027583186-a04a19e4f6ce?auto=format&fit=crop&w=900&q=80"],
+    stock: 28
+  },
+  {
+    id: 13,
+    code: "BC-24",
+    name: "Bolt Cutter, 600mm",
+    price: 1733,
+    category: "Cutters",
+    description: "600mm bolt cutter, max cutting capacity 9mm diameter. Conforms to IS 5200.",
+    images: ["https://images.unsplash.com/photo-1756027583186-a04a19e4f6ce?auto=format&fit=crop&w=900&q=80"],
+    stock: 7
+  },
+  {
+    id: 14,
+    code: "CTB 1805",
+    name: "Cantilever Tool Box (5 Compartments)",
+    price: 2661,
+    category: "Tool Storage",
+    description: "5-compartment cantilever tool box, 205 x 200 x 450mm, for organised tool storage.",
+    images: ["https://images.unsplash.com/photo-1756027583186-a04a19e4f6ce?auto=format&fit=crop&w=900&q=80"],
+    stock: 8
+  },
+  {
+    id: 15,
+    code: "HBJ5",
+    name: "Hydraulic Bottle Jack, 5 Ton",
+    price: 2217,
+    category: "Workshop Equipment",
+    description: "5-ton capacity hydraulic bottle jack for workshop and garage lifting jobs.",
+    images: ["https://images.unsplash.com/photo-1679049061093-3b09c0eac551?auto=format&fit=crop&w=900&q=80"],
+    stock: 5
+  },
+  {
+    id: 16,
+    code: "BVSGM 04",
+    name: "Bench Vice, Fixed Base, 100mm",
+    price: 3037,
+    category: "Vices",
+    description: "Fixed base bench vice with 100mm max jaw opening, for secure workholding on the bench.",
+    images: ["https://images.unsplash.com/photo-1679049061093-3b09c0eac551?auto=format&fit=crop&w=900&q=80"],
+    stock: 6
+  }
+];
+
+/* =========================================
+   STATE
+   ========================================= */
+const CART_KEY = "taparia_cart";
+let cart = loadCart();
+let activeCategory = "All";
+let productQuantity = 1;
+
+function formatPrice(v){ return CONFIG.currency + Number(v).toLocaleString("en-IN"); }
+function loadCart(){
+  try { const s = localStorage.getItem(CART_KEY); return s ? JSON.parse(s) : []; }
+  catch(e){ return []; }
+}
+function saveCart(){ localStorage.setItem(CART_KEY, JSON.stringify(cart)); updateCartCount(); }
+function updateCartCount(){
+  document.getElementById("cartCount").textContent = cart.reduce((t,i)=>t+i.quantity,0);
+}
+function getProduct(id){ return PRODUCTS.find(p=>p.id===Number(id)); }
+function getCartItem(id){ return cart.find(i=>i.id===Number(id)); }
+function isInCart(id){ return Boolean(getCartItem(id)); }
+function cartSubtotal(){
+  return cart.reduce((t,i)=>{ const p=getProduct(i.id); return t+(p?p.price*i.quantity:0); },0);
+}
+function showToast(msg){
+  const t=document.getElementById("toast");
+  t.textContent=msg; t.classList.add("show");
+  clearTimeout(window._tt); window._tt=setTimeout(()=>t.classList.remove("show"),2200);
+}
+function navigate(path){ window.location.hash = path; }
+function scrollTop(){ window.scrollTo({top:0,behavior:"smooth"}); }
+
+/* =========================================
+   CART OPS
+   ========================================= */
+function addToCart(id, qty=1){
+  const p = getProduct(id);
+  if(!p || p.stock<=0){ showToast("Out of stock."); return; }
+  const existing = getCartItem(id);
+  if(existing){
+    const nq = existing.quantity + qty;
+    existing.quantity = Math.min(nq, p.stock);
+    showToast(nq>p.stock ? "Maximum stock reached." : "Cart updated.");
+  } else {
+    cart.push({ id:p.id, quantity: Math.min(qty,p.stock) });
+    showToast("Added to cart ✓");
+  }
+  saveCart(); render();
+}
+function updateCartQuantity(id, qty){
+  const p=getProduct(id), item=getCartItem(id);
+  if(!p||!item) return;
+  qty=Number(qty);
+  if(qty<=0){ removeFromCart(id); return; }
+  item.quantity = Math.min(qty,p.stock);
+  saveCart(); render();
+}
+function changeCartQuantity(id, amount){
+  const item=getCartItem(id); if(!item) return;
+  updateCartQuantity(id, item.quantity+amount);
+}
+function removeFromCart(id){
+  cart = cart.filter(i=>i.id!==Number(id));
+  saveCart(); showToast("Removed from cart."); render();
+}
+
+/* =========================================
+   PRODUCT CARD
+   ========================================= */
+function productCard(p){
+  const inCart = isInCart(p.id);
+  return `
+    <article class="product" onclick="navigate('/product/${p.id}')">
+      <div class="product-image"><img src="${p.images[0]}" alt="${escapeHtml(p.name)}" loading="lazy"></div>
+      <div class="product-body">
+        <div class="pcode">${escapeHtml(p.code)}</div>
+        <div class="product-cat">${escapeHtml(p.category)}</div>
+        <h3>${escapeHtml(p.name)}</h3>
+        <div class="price">${formatPrice(p.price)} <span>MRP incl. GST</span></div>
+        <button class="add-btn ${inCart?"in-cart":""}" onclick="event.stopPropagation(); addToCart(${p.id})">
+          ${inCart ? "In Cart ✓" : "Add to Cart"}
+        </button>
+      </div>
+    </article>
+  `;
+}
+
+/* =========================================
+   HOME
+   ========================================= */
+function renderHome(){
+  const categories = ["All", ...new Set(PRODUCTS.map(p=>p.category))];
+  const filtered = activeCategory==="All" ? PRODUCTS : PRODUCTS.filter(p=>p.category===activeCategory);
+
+  return `
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-label">R S PATHAN &middot; HARDWARE &amp; TOOLS</div>
+        <h2>Genuine tools, <span>price-list rates.</span></h2>
+        <p>Wrenches, pliers, spanners, sockets, hammers and workshop equipment for every job, at honest prices.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="#products" class="btn btn-red">Shop All Tools →</a>
+          <a href="#/cart" class="btn btn-outline">View Cart</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="container">
+        <div class="title">
+          <small>Product catalog</small>
+          <h2>Hand Tools &amp; Equipment</h2>
+          <p>${filtered.length} products &middot; prices inclusive of GST</p>
+        </div>
+
+        <div class="filters">
+          ${categories.map(c => `
+            <button class="filter-btn ${activeCategory===c?"active":""}" onclick="setCategory('${escapeAttribute(c)}')">
+              ${escapeHtml(c)}
+            </button>
+          `).join("")}
+        </div>
+
+        <div class="product-grid">
+          ${filtered.length ? filtered.map(productCard).join("") : `
+            <div class="empty-state"><h2>No products found</h2><p>Try another category.</p></div>
+          `}
+        </div>
+      </div>
+    </section>
+  `;
+}
+function setCategory(c){
+  activeCategory=c; render();
+  setTimeout(()=>document.getElementById("products")?.scrollIntoView({behavior:"smooth"}),20);
+}
+
+/* =========================================
+   PRODUCT DETAIL
+   ========================================= */
+function renderProductPage(id){
+  const p = getProduct(id);
+  if(!p){
+    return `<section class="section"><div class="container empty-state">
+      <h2>Product not found</h2><br><a href="#/" class="btn btn-red">Back to Home</a>
+    </div></section>`;
+  }
+  productQuantity = 1;
+  const related = PRODUCTS.filter(x=>x.category===p.category && x.id!==p.id).slice(0,4);
+
+  return `
+    <section class="section">
+      <div class="container">
+        <a href="#/" class="btn btn-outline" style="background:#fff;border:1px solid var(--border);color:var(--text);margin-bottom:22px;">← Back to Products</a>
+        <div class="detail-wrap">
+          <div class="detail-image"><img id="mainProductImage" src="${p.images[0]}" alt="${escapeHtml(p.name)}"></div>
+          <div class="detail-content">
+            <div class="detail-cat">${escapeHtml(p.category)}</div>
+            <h1>${escapeHtml(p.name)}</h1>
+            <div class="detail-code">Product code: ${escapeHtml(p.code)}</div>
+            <div class="detail-price">${formatPrice(p.price)}</div>
+            <p class="detail-desc">${escapeHtml(p.description)}</p>
+            <div class="spec-row"><span>Availability</span><span>${p.stock>0?`${p.stock} in stock`:"Out of stock"}</span></div>
+            <div class="spec-row"><span>Pricing</span><span>MRP, inclusive of GST</span></div>
+            ${p.stock>0 ? `
+              <div style="margin-top:20px;">
+                <div class="qty-control">
+                  <button onclick="changeProductQuantity(-1)">−</button>
+                  <span id="productQuantity">1</span>
+                  <button onclick="changeProductQuantity(1)">+</button>
+                </div>
+                <button class="btn btn-red" onclick="addProductPageToCart(${p.id})">Add to Cart</button>
+              </div>
+            ` : ""}
+          </div>
+        </div>
+
+        ${related.length ? `
+          <div style="margin-top:56px;">
+            <div class="title"><small>You may also like</small><h2>Related Products</h2></div>
+            <div class="product-grid">${related.map(productCard).join("")}</div>
+          </div>
+        ` : ""}
+      </div>
+    </section>
+  `;
+}
+function changeProductQuantity(amount){
+  const cur = getCurrentProductFromHash();
+  if(!cur) return;
+  productQuantity = Math.max(1, Math.min(productQuantity+amount, cur.stock));
+  const el = document.getElementById("productQuantity");
+  if(el) el.textContent = productQuantity;
+}
+function addProductPageToCart(id){ addToCart(id, productQuantity); }
+function getCurrentProductFromHash(){
+  const m = window.location.hash.match(/^#\/product\/(\d+)/);
+  return m ? getProduct(m[1]) : null;
+}
+
+/* =========================================
+   CART PAGE
+   ========================================= */
+function renderCartPage(){
+  if(!cart.length){
+    return `<section class="section"><div class="container">
+      <div class="empty-state"><h2>Your cart is empty</h2><p>Add some tools to your cart.</p><br>
+      <a href="#/" class="btn btn-red">Start Shopping</a></div>
+    </div></section>`;
+  }
+  const subtotal = cartSubtotal();
+  return `
+    <section class="section">
+      <div class="container">
+        <div class="title"><small>Shopping cart</small><h2>Your Cart</h2></div>
+        <div class="cart-layout">
+          <div class="cart-list">
+            ${cart.map(item=>{
+              const p=getProduct(item.id); if(!p) return "";
+              return `
+                <div class="cart-item">
+                  <img src="${p.images[0]}" alt="${escapeHtml(p.name)}">
+                  <div>
+                    <h3>${escapeHtml(p.name)}</h3>
+                    <div class="cart-item-price">${formatPrice(p.price)} each &middot; ${escapeHtml(p.code)}</div>
+                  </div>
+                  <div class="cart-actions">
+                    <div class="small-qty">
+                      <button onclick="changeCartQuantity(${p.id},-1)">−</button>
+                      <span>${item.quantity}</span>
+                      <button onclick="changeCartQuantity(${p.id},1)">+</button>
+                    </div>
+                    <strong>${formatPrice(p.price*item.quantity)}</strong>
+                    <button class="remove-btn" onclick="removeFromCart(${p.id})">Remove</button>
+                  </div>
+                </div>
+              `;
+            }).join("")}
+          </div>
+          <aside class="summary">
+            <h2>Order Summary</h2>
+            <div class="summary-row"><span>Subtotal</span><strong>${formatPrice(subtotal)}</strong></div>
+            <div class="summary-row"><span>Delivery</span><strong>Calculated at checkout</strong></div>
+            <div class="summary-row summary-total"><span>Total</span><span>${formatPrice(subtotal)}</span></div>
+            <a href="#/checkout" class="btn btn-red" style="width:100%;justify-content:center;margin-top:18px;">Proceed to Checkout</a>
+            <a href="#/" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:9px;background:#fff;border:1px solid var(--border);color:var(--text);">Continue Shopping</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* =========================================
+   CHECKOUT PAGE
+   ========================================= */
+function renderCheckoutPage(){
+  if(!cart.length){
+    return `<section class="section"><div class="container">
+      <div class="empty-state"><h2>Your cart is empty</h2><p>Please add products before checking out.</p><br>
+      <a href="#/" class="btn btn-red">Shop Now</a></div>
+    </div></section>`;
+  }
+  const subtotal = cartSubtotal();
+  return `
+    <section class="section">
+      <div class="container">
+        <div class="title"><small>Almost there</small><h2>Checkout</h2></div>
+        <div class="checkout-grid">
+          <form class="checkout-form" id="checkoutForm" onsubmit="submitOrder(event)">
+            <div class="form-group"><label>Name <span class="required">*</span></label><input type="text" name="name" required placeholder="Your full name"></div>
+            <div class="form-group"><label>Email <span class="required">*</span></label><input type="email" name="email" required placeholder="you@example.com"></div>
+            <div class="form-group"><label>Phone <span class="required">*</span></label><input type="tel" name="phone" required placeholder="Your phone number"></div>
+            <div class="form-group"><label>Address <span class="required">*</span></label><textarea name="address" required placeholder="Complete delivery address"></textarea></div>
+            <div class="form-group"><label>Notes</label><textarea name="notes" placeholder="Any additional instructions..."></textarea></div>
+            <button type="submit" class="btn btn-red" style="width:100%;justify-content:center;" id="submitOrderBtn">Place Order</button>
+          </form>
+          <aside class="summary">
+            <h2>Order Summary</h2>
+            ${cart.map(item=>{
+              const p=getProduct(item.id);
+              return `<div class="checkout-item"><span>${escapeHtml(p.name)} × ${item.quantity}</span><strong>${formatPrice(p.price*item.quantity)}</strong></div>`;
+            }).join("")}
+            <div class="summary-row summary-total"><span>Total</span><span>${formatPrice(subtotal)}</span></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+async function submitOrder(event){
+  event.preventDefault();
+  if(!cart.length){ showToast("Your cart is empty."); navigate("/"); return; }
+  const btn = document.getElementById("submitOrderBtn");
+  btn.disabled = true; btn.textContent = "Placing Order...";
+
+  // No backend configured in this demo — simulate success so the flow can be tested end to end.
+  await new Promise(r=>setTimeout(r,700));
+
+  cart = []; saveCart();
+  document.getElementById("app").innerHTML = `
+    <section class="section"><div class="container">
+      <div class="success-box">
+        <div class="success-icon">✓</div>
+        <h1>Order Received!</h1>
+        <p style="margin:14px 0;color:var(--muted);">Thank you for shopping with R S Pathan. Our team will confirm your order shortly.</p>
+        <p style="color:var(--muted);font-size:12.5px;">Redirecting to home in 3 seconds...</p>
+      </div>
+    </div></section>
+  `;
+  updateCartCount();
+  setTimeout(()=>navigate("/"),3000);
+}
+
+/* =========================================
+   ROUTER
+   ========================================= */
+function render(){
+  const hash = window.location.hash || "#/";
+  let html = "";
+  if(hash==="#/"||hash==="#") html = renderHome();
+  else if(hash==="#/cart") html = renderCartPage();
+  else if(hash==="#/checkout") html = renderCheckoutPage();
+  else if(hash.startsWith("#/product/")) html = renderProductPage(hash.split("/")[2]);
+  else html = `<section class="section"><div class="container empty-state"><h2>Page not found</h2><a href="#/" class="btn btn-red">Go Home</a></div></section>`;
+
+  document.getElementById("app").innerHTML = html;
+  updateCartCount();
+  if(hash!=="#/" && hash!=="#") scrollTop();
+}
+
+function escapeHtml(v){
+  return String(v).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
+}
+function escapeAttribute(v){
+  return String(v).replaceAll("&","&amp;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+window.addEventListener("hashchange", render);
+render();
+</script>
+
+</body>
+</html>
